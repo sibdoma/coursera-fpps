@@ -1,0 +1,8 @@
+test
+submit sivak.pavel@gmail.com W1B12rAu9hm7D1i4
+submit sivak.pavel@gmail.com def iter(a: Int): Boolean = {
+      if (a > 1000) true
+      else if (contains(s, a) && !p(a)) false
+      else iter(a + 1)
+    }
+submit sivak.pavel@gmail.com l4mJtl2arq9IkdEO

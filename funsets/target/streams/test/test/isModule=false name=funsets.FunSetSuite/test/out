@@ -1,0 +1,9 @@
+[0m[[0minfo[0m] [0m[32mFunSetSuite:[0m[0m
+[0m[[0minfo[0m] [0m[32m- string take[0m[0m
+[0m[[0minfo[0m] [0m[32m- adding ints[0m[0m
+[0m[[0minfo[0m] [0m[32m- contains is implemented[0m[0m
+[0m[[0minfo[0m] [0m[32m- singletonSet(1) contains 1[0m[0m
+[0m[[0minfo[0m] [0m[32m- union contains all elements of each set[0m[0m
+[0m[[0minfo[0m] [0m[32m- intersection contains only elements which are in both sets[0m[0m
+[0m[[0minfo[0m] [0m[32m- diff contains only elements from first set which are not in second[0m[0m
+[0m[[0minfo[0m] [0m[32m- filter contains only elements which are true from predicate[0m[0m
