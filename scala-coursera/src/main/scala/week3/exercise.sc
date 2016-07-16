@@ -1,19 +1,19 @@
-//object exercise {
-  val t1 = new NonEmpty(3, Empty, Empty)
+object exercise {
+  val t1 = new NonEmpty(3, new Empty, new Empty)
   val t2 = t1 incl 4
-  val a: Array[NonEmpty] = Array(new NonEmpty(1, Empty, Empty))
-  val b: Array[IntSet] = a
-  b(0)
-//}
+  val a: Array[NonEmpty] = Array(new NonEmpty(1, new Empty, new Empty))
+//  val b: Array[IntSet] = a
+//  b(0)
+}
 
 abstract class IntSet {
   def contains(x: Int): Boolean
   def incl(x: Int): IntSet
 }
 
-object Empty extends IntSet {
+class Empty extends IntSet {
   def contains(x: Int): Boolean = false
-  def incl(x: Int): IntSet = new NonEmpty(x, Empty, Empty)
+  def incl(x: Int): IntSet = new NonEmpty(x, new Empty, new Empty)
   override def toString() = "."
 }
 
