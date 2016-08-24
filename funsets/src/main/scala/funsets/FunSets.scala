@@ -57,12 +57,13 @@ object FunSets {
     * Returns whether all bounded integers within `s` satisfy `p`.
     */
   def forall(s: Set, p: Int => Boolean): Boolean = {
-    def iter(a: Int): Boolean = {
-      if (a > bound) true
+    def inforall(a: Int): Boolean = {
+      if (a > bound)
+        true
       else if (contains(s, a) && !p(a)) false
-      else iter(a + 1)
+      else inforall(a + 1)
     }
-    iter(-bound)
+    inforall(-bound)
   }
 
   /**
@@ -70,19 +71,24 @@ object FunSets {
     * that satisfies `p`.
     */
   def exists(s: Set, p: Int => Boolean): Boolean = {
-    def f (p: Int => Boolean)   =
+    def inexists (i: Int): Boolean =
+      if (i > bound) false
+      else if (contains(s, i) && forall(singletonSet(i), p))
+        true
+      else inexists(i + 1)
+    inexists(-bound)
   }
 
   /**
     * Returns a set transformed by applying `f` to each element of `s`.
     */
   def map(s: Set, f: Int => Int): Set = {
-    def iter(a: Int, set: Set): Set = {
+    def inmap(a: Int, set: Set): Set = {
       if (a > 1000) set
-      else if (contains(s, a)) iter(a + 1, union(set, singletonSet(f(a))))
-      else iter(a + 1, set)
+      else if (contains(s, a)) inmap(a + 1, union(set, singletonSet(f(a))))
+      else inmap(a + 1, set)
     }
-    iter(-1000, (_) => false)
+    inmap(-1000, (_) => false)
   }
 
   /**
@@ -99,4 +105,5 @@ object FunSets {
   def printSet(s: Set) {
     println(toString(s))
   }
+
 }

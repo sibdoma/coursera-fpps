@@ -135,6 +135,13 @@ class FunSetSuite extends FunSuite {
       assert(contains(s, 7), "Filter 3")
     }
   }
+  test("exists tests whether a set contains at least one element for which the given predicate is true") {
+    new TestSets {
+      assert(exists(_ < 10, _ > 5), "Exists 1")
+      assert(!exists(_ < 10, _ > 10), "Exists 2")
+      assert(exists(_ < 10, _ > 8), "Exists 3")
+    }
+  }
 
 
 }
